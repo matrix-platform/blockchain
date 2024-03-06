@@ -154,7 +154,7 @@ return new class() extends matrix\cli\Controller {
     }
 
     private function mutex() {
-        return "TronScan";
+        return '.TronScan';
     }
 
 };
