@@ -42,6 +42,8 @@ return new class() extends matrix\cli\Controller {
         $this->event = Keccak::hash('Transfer(address,address,uint256)', 256);
         $this->rate = 10 ** $this->decimals;
         $this->tron = new Tron();
+
+        $this->mutex("TronScan");
     }
 
     protected function process($form) {
