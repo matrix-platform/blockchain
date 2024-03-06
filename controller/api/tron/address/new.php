@@ -24,6 +24,10 @@ return new class() extends matrix\web\api\Controller {
 
             if (!$wallet) {
                 $wallet = $this->initTronWallet($merchant['id'], $data['username']);
+
+                if (!$wallet) {
+                    return;
+                }
             }
 
             return ['success' => true, 'address' => $wallet['address']];
