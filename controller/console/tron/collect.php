@@ -16,8 +16,6 @@ return new class() extends matrix\cli\Controller {
     protected function init() {
         $this->decimals = cfg('tron-api.trc-usdt-decimals');
         $this->notified = [];
-
-        $this->mutex("TronScan");
     }
 
     protected function process($form) {
@@ -153,6 +151,10 @@ return new class() extends matrix\cli\Controller {
                 }
             }
         }
+    }
+
+    private function mutex() {
+        return "TronScan";
     }
 
 };

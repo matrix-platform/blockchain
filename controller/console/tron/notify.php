@@ -9,10 +9,6 @@ return new class() extends matrix\cli\Controller {
 
     use MerchantHelper, Mutex;
 
-    protected function init() {
-        $this->mutex("TronScan");
-    }
-
     protected function process($form) {
         $table = table('TronTransaction');
 
@@ -45,6 +41,10 @@ return new class() extends matrix\cli\Controller {
 
     protected function transaction() {
         return null;
+    }
+
+    private function mutex() {
+        return "TronScan";
     }
 
 };
